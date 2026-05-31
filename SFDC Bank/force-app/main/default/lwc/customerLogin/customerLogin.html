@@ -1,0 +1,41 @@
+<template>
+
+    <div class="background">
+
+        <div class="login-container">
+
+            <img
+                src={loginImg}
+                alt="Login Image"
+                class="login-image"/>
+
+            <div class="login-title">
+                Customer Login
+            </div>
+
+            <lightning-input
+                label="Email"
+                onkeyup={handleEmail}>
+            </lightning-input>
+
+            <lightning-input
+                type="password"
+                label="Password"
+                onkeyup={handlePassword}>
+            </lightning-input>
+
+            <div class="login-button">
+
+                <lightning-button
+                    variant="brand"
+                    label="Login"
+                    onclick={handleLogin}>
+                </lightning-button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</template>

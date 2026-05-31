@@ -1,0 +1,70 @@
+<template>
+
+    <div class="dashboard-container">
+        <div class="dashboard-title">
+            Bank Account Dashboard
+        </div>
+
+
+    <!--<lightning-card title="Bank Account Dashboard"> -->
+        <div class="search-box">
+            <!-- SEARCH BAR -->
+
+            <lightning-input
+                type="search"
+                label="Search Account"
+                placeholder="Enter Name or Account Number"
+                onkeyup={handleSearch}>
+            </lightning-input>
+
+         </div>
+         
+         <!--  Account List -->
+
+        <template if:true={accounts}>
+
+            <template for:each={accounts} for:item="acc">
+
+                <div key={acc.Id} class="account-card">
+                    <div class="account-name">
+                        {acc.Owner_Customer_Name__r.Name}
+                    </div>
+                    <div class="account-number">
+                        <b>Account Number : </b>{acc.Name}
+                    </div>  
+                    <div class="account-balance">
+                        <b>Balance : </b>${acc.Account_Balance__c}
+                    </div>
+                    <div class="account-pan">
+                        <b>PAN Number : </b>{acc.PAN_Number__c}
+                    </div>
+                    <div class="account-status">
+                        <b>Status : </b>{acc.Status__c}
+                    </div>
+                    <div class="account-type">                
+                        <b>Type : </b>{acc.Account_Type__c}
+                    </div>
+                </div>
+
+
+                <!--    <p><b>Name:</b> {acc.Owner_Customer_Name__r.Name}</p>
+                    <p><b>Account Number:</b> {acc.Name}</p>
+
+                    <p><b>Balance:</b> ${acc.Account_Balance__c}</p>
+                    <p><b>PAN Number:</b> {acc.PAN_Number__c}</p>
+
+                    <p><b>Status:</b> {acc.Status__c}</p>
+
+                    <p><b>Type:</b> {acc.Account_Type__c}</p>
+
+                </div> -->
+
+            </template>
+
+        </template>
+
+      <!--</lightning-card> -->
+
+    </div>
+
+</template>

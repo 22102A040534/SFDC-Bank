@@ -1,0 +1,49 @@
+<template>
+
+    <lightning-card title="My Bank Accounts">
+
+        <template if:true={accounts.data}>
+
+            <template for:each={accounts.data}
+                      for:item="acc">
+
+                <div key={acc.Id}
+                     class="slds-box slds-m-around_small">
+
+                    <p>
+                        <b>Account : </b>
+                    {acc.Owner_Customer_Name__r.Name}
+                    </p>
+                    <p>
+                        <b>Account Number : </b>
+                        {acc.Name}
+                    </p>
+                    <p>
+                        <b>Type : </b>
+                        {acc.Account_Type__c}
+                    
+                    </p>
+                    <p>
+                        <b>PAN Number : </b>
+                        {acc.PAN_Number__c}
+                    </p>
+
+                    <p>
+                        <b>Balance : </b>
+                        ${acc.Account_Balance__c}
+                    </p>
+
+                    <p>
+                        <b>Status : </b>
+                        {acc.Status__c}
+                    </p>
+
+                </div>
+
+            </template>
+
+        </template>
+
+    </lightning-card>
+
+</template>
